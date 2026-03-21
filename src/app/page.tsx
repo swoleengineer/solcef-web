@@ -7,7 +7,7 @@ export default function Home() {
       <section className="bg-emerald-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Empowering Haiti Through Education
+            Education for Haiti
           </h1>
           <p className="text-xl md:text-2xl text-emerald-100 max-w-3xl mx-auto mb-10">
             SOLCEF runs a school in Haiti and connects US-based sponsors with
