@@ -68,7 +68,7 @@ export default function Home() {
   return (
     <>
       {/* ───── Hero ───── */}
-      <section className="relative min-h-[90vh] flex items-center bg-emerald-900">
+      <section className="relative min-h-[90vh] flex items-center bg-emerald-900 overflow-x-hidden">
         {/* Background image with overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center"
