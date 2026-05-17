@@ -106,7 +106,7 @@ export default function FAQPage() {
             Still Have Questions?
           </h2>
           <p className="text-stone-600 mb-8 text-lg">
-            We're happy to help. Reach out and we'll get back to you.
+            We&apos;re happy to help. Reach out and we&apos;ll get back to you.
           </p>
           <Link
             href="/contact"

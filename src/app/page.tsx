@@ -187,9 +187,10 @@ export default function Home() {
                 className="group bg-stone-50 rounded-2xl overflow-hidden border border-stone-100 hover:shadow-lg hover:shadow-stone-200/40 transition-all duration-300"
               >
                 <div className="h-72 bg-stone-100 overflow-hidden">
-                  <div
-                    className="w-full h-full bg-cover bg-[center_30%] group-hover:scale-105 transition-transform duration-500"
-                    style={{ backgroundImage: `url(${student.image})` }}
+                  <img
+                    src={student.image}
+                    alt={`${student.name}, age ${student.age}, grade ${student.grade}`}
+                    className="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">
