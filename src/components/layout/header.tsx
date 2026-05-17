@@ -60,6 +60,8 @@ export function Header() {
             className="md:hidden p-2 rounded-lg hover:bg-stone-100 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
           >
             <svg className="w-6 h-6 text-stone-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               {mobileOpen ? (
@@ -72,9 +74,12 @@ export function Header() {
         </div>
 
         {/* Mobile nav */}
-        {mobileOpen && (
-          <div className="md:hidden pb-5 space-y-1 border-t border-stone-100 pt-3">
-            {navLinks.map((link) => (
+        <div
+          id="mobile-navigation"
+          hidden={!mobileOpen}
+          className="md:hidden pb-5 space-y-1 border-t border-stone-100 pt-3"
+        >
+          {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -94,7 +99,7 @@ export function Header() {
               </Link>
             </div>
           </div>
-        )}
+
       </nav>
     </header>
   );

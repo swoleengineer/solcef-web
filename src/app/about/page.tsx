@@ -1,4 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Our Story | SOLCEF",
+  description:
+    "Learn about SOLCEF's founding, mission, and the people behind our education initiatives in Haiti. Supporting 150+ students since 2014.",
+  openGraph: {
+    title: "Our Story | SOLCEF",
+    description: "How a vision for education became a movement changing lives in Haiti.",
+    images: ["/images/about-hero.jpg"],
+  },
+};
+
+function getInitials(name: string): string {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return "";
+  if (parts.length === 1) return parts[0][0]?.toUpperCase() ?? "";
+  return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
+}
 
 const timeline = [
   { year: "2014", event: "SOLCEF is founded by Joram and Rose with a vision to bring quality education to underserved communities in Haiti." },
@@ -115,7 +134,7 @@ export default function AboutPage() {
             {team.map((member) => (
               <div key={member.name} className="bg-stone-50 rounded-2xl p-8 border border-stone-100 hover:shadow-md transition-shadow">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center text-emerald-700 font-bold text-xl mb-4">
-                  {member.name.split(" ").map(n => n[0]).join("")}
+                  {getInitials(member.name)}
                 </div>
                 <h3 className="text-xl font-bold text-stone-900">{member.name}</h3>
                 <p className="text-amber-600 font-medium text-sm mb-3">{member.role}</p>
@@ -139,7 +158,7 @@ export default function AboutPage() {
             className="inline-flex items-center gap-2 bg-white text-emerald-700 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition-colors shadow-lg"
           >
             Sponsor a Student Today
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5" aria-hidden="true">
               <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
             </svg>
           </Link>

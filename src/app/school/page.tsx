@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const coverage = [
-  { title: "Tuition & Fees", desc: "Full coverage of school tuition and administrative fees so no child is turned away." },
-  { title: "Books & Materials", desc: "Textbooks, notebooks, pens, and all learning materials needed for the school year." },
-  { title: "Uniforms", desc: "School uniforms that give students dignity, belonging, and the confidence to learn." },
-  { title: "Daily Meals", desc: "Nutritious meals served each school day — for many students, this is their most reliable meal." },
-  { title: "Health & Hygiene", desc: "Basic health screenings, hygiene supplies, and first aid to keep students healthy and in class." },
-  { title: "Teacher Support", desc: "Resources and training for local teachers to ensure quality instruction in every classroom." },
+  { id: "tuition", title: "Tuition & Fees", desc: "Full coverage of school tuition and administrative fees so no child is turned away." },
+  { id: "books", title: "Books & Materials", desc: "Textbooks, notebooks, pens, and all learning materials needed for the school year." },
+  { id: "uniforms", title: "Uniforms", desc: "School uniforms that give students dignity, belonging, and the confidence to learn." },
+  { id: "meals", title: "Daily Meals", desc: "Nutritious meals served each school day — for many students, this is their most reliable meal." },
+  { id: "health", title: "Health & Hygiene", desc: "Basic health screenings, hygiene supplies, and first aid to keep students healthy and in class." },
+  { id: "teachers", title: "Teacher Support", desc: "Resources and training for local teachers to ensure quality instruction in every classroom." },
 ];
 
 export default function SchoolPage() {
@@ -85,7 +85,7 @@ export default function SchoolPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {coverage.map((item) => (
               <div
-                key={item.title}
+                key={item.id}
                 className="bg-white rounded-xl p-6 border border-stone-100 hover:shadow-md hover:border-emerald-100 transition-all duration-200"
               >
                 <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold mb-4">

@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Support Education in Haiti | SOLCEF",
+  description:
+    "Sponsor a student in Haiti. SOLCEF connects US donors with individual students, covering tuition, supplies, uniforms, and meals. 501(c)(3) nonprofit.",
+  openGraph: {
+    title: "Support Education in Haiti | SOLCEF",
+    description: "Sponsor a student and give them the gift of education in Haiti.",
+    images: ["/images/hero-students.jpg"],
+  },
+};
 
 const placeholderStudents = [
   {
@@ -36,16 +48,19 @@ const causes = [
     title: "Quality Education",
     desc: "Every child deserves access to learning. We fund tuition, books, uniforms, and daily meals so students can focus on their future.",
     image: "/images/books.jpg",
+    imagePosition: "bg-center",
   },
   {
     title: "Student Sponsorship",
     desc: "US-based sponsors are matched with individual students, creating personal connections and accountability that transform lives on both sides.",
     image: "/images/learning.jpg",
+    imagePosition: "bg-center",
   },
   {
     title: "Community Empowerment",
     desc: "Beyond the classroom, we invest in the broader community — supporting families, local teachers, and the infrastructure that makes education possible.",
     image: "/images/community.jpg",
+    imagePosition: "bg-center",
   },
 ];
 
@@ -70,7 +85,7 @@ export default function Home() {
           <div className="max-w-3xl">
             {/* Trust badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/25 text-amber-200 text-sm font-medium mb-8 backdrop-blur-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4" aria-hidden="true">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
               </svg>
               501(c)(3) Nonprofit — All Donations Tax-Deductible
@@ -96,7 +111,7 @@ export default function Home() {
                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-amber-500/25 hover:shadow-2xl hover:shadow-amber-500/30 hover:from-amber-400 hover:to-amber-500 transition-all duration-300"
               >
                 Sponsor a Student
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5" aria-hidden="true">
                   <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
                 </svg>
               </Link>
@@ -149,7 +164,7 @@ export default function Home() {
               >
                 <div className="h-56 bg-stone-100 overflow-hidden">
                   <div
-                    className={`w-full h-full bg-cover ${item.image.includes('student') ? 'bg-top' : 'bg-center'} group-hover:scale-105 transition-transform duration-500`}
+                    className={`w-full h-full bg-cover ${item.imagePosition} group-hover:scale-105 transition-transform duration-500`}
                     style={{ backgroundImage: `url(${item.image})` }}
                   />
                 </div>
@@ -205,7 +220,7 @@ export default function Home() {
                     className="inline-flex items-center gap-1.5 text-emerald-700 font-semibold text-sm hover:text-emerald-600 transition-colors"
                   >
                     Sponsor {student.name}
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4" aria-hidden="true">
                       <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
                     </svg>
                   </Link>
